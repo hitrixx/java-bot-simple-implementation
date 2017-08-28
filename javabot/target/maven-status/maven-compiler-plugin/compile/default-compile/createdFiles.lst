@@ -1,0 +1,13 @@
+bot\Command.class
+bot\Chat.class
+bot\User.class
+bot\ClientAnswer.class
+bot\TelegramBotImpl.class
+bot\Question.class
+bot\Step.class
+bot\CreditBotApi$1.class
+common\ConnectionPool.class
+bot\Bot.class
+bot\TelegramBotImpl$1.class
+bot\CreditBotApi.class
+common\Common.class

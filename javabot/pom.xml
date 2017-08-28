@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>java-bot</groupId>
+    <artifactId>java-bot</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+        <build.sourceEncoding>UTF-8</build.sourceEncoding>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pengrad</groupId>
+            <artifactId>java-telegram-bot-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1212</version>
+        </dependency>
+    </dependencies>
+
+
+
+
+
+
+    <build>
+        <finalName>telegram-bot</finalName>
+        <plugins>
+            <!--Build webapp-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${build.sourceEncoding}</encoding>
+                    <excludes>
+                        <exclude>**/FTPClient.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!--<plugin>-->
+                <!--&lt;!&ndash; Usage: mvn wildfly:deploy See also: https://docs.jboss.org/wildfly/plugins/maven/latest/examples/deployment-example.html &ndash;&gt;-->
+                <!--<groupId>org.wildfly.plugins</groupId>-->
+                <!--<artifactId>wildfly-maven-plugin</artifactId>-->
+
+                <!--<configuration>-->
+                    <!--<hostname>${wildfly-hostname}</hostname>-->
+                    <!--<port>${wildfly-port}</port>-->
+                    <!--<username>${wildfly-username}</username>-->
+                    <!--<password>${wildfly-password}</password>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <plugin>
+                <groupId>com.theoryinpractise</groupId>
+                <artifactId>youtrack-maven-plugin</artifactId>
+                <version>1.0.8</version>
+                <configuration>
+                    <server>mdfin</server>
+                    <project>MDFC</project>
+                    <iterationLength>14</iterationLength>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+
+    </build>
+
+</project>
