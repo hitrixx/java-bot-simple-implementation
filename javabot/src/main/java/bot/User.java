@@ -32,7 +32,7 @@ public class User {
 
         try {
             con = ConnectionPool.getConnection();
-            ps = con.prepareStatement("select * from front.bot_user where chat_id = ? and channel!='mdfin_errors'");
+            ps = con.prepareStatement("select * from front.bot_user where chat_id = ?");
             ps.setLong(1, chat_id);
             rs = ps.executeQuery();
             if (rs.next()) {
